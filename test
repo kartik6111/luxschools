@@ -1,0 +1,2700 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Kartik's Royalas International Academy - The Pinnacle of Global Education, Innovation, and Character Excellence.">
+    <meta name="keywords" content="Luxury School, International Academy, IB World School, Smart Campus, STEM Education, Future Leaders, The Kartik's Royalas">
+    <meta name="author" content="The Kartik's Royalas Academy">
+    <title>The Kartik's Royalas International Academy | World-Class Luxury Education</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+
+    <style>
+        /* ==========================================================================
+           1. CORE DESIGN SYSTEM & CUSTOM PROPERTIES
+           ========================================================================== */
+        :root {
+            /* Primary Luxury Palette */
+            --navy-deep: #0B1F3A;
+            --navy-dark: #071325;
+            --navy-light: #16325B;
+            --royal-gold: #D4AF37;
+            --gold-light: #F3E5AB;
+            --gold-dark: #AA820A;
+            --soft-gray: #F5F5F5;
+            --pure-white: #FFFFFF;
+            --jet-black: #111111;
+            
+            /* Dark Theme Defaults */
+            --bg-primary: #071325;
+            --bg-secondary: #0B1F3A;
+            --bg-card: rgba(11, 31, 58, 0.7);
+            --bg-glass: rgba(11, 31, 58, 0.65);
+            --text-primary: #F8FAFC;
+            --text-secondary: #CBD5E1;
+            --text-muted: #94A3B8;
+            --border-color: rgba(212, 175, 55, 0.25);
+            --border-light: rgba(255, 255, 255, 0.1);
+            --shadow-gold: 0 10px 30px rgba(212, 175, 55, 0.15);
+            --shadow-card: 0 15px 35px rgba(0, 0, 0, 0.4);
+
+            /* Typography */
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+
+            /* Transitions */
+            --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition-fast: all 0.2s ease-in-out;
+        }
+
+        /* Light Mode Variant */
+        [data-theme="light"] {
+            --bg-primary: #F8FAFC;
+            --bg-secondary: #FFFFFF;
+            --bg-card: rgba(255, 255, 255, 0.85);
+            --bg-glass: rgba(255, 255, 255, 0.75);
+            --text-primary: #0B1F3A;
+            --text-secondary: #334155;
+            --text-muted: #64748B;
+            --border-color: rgba(11, 31, 58, 0.15);
+            --border-light: rgba(0, 0, 0, 0.08);
+            --shadow-gold: 0 10px 30px rgba(212, 175, 55, 0.2);
+            --shadow-card: 0 15px 35px rgba(11, 31, 58, 0.08);
+        }
+
+        /* Reset & Base Setup */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.25;
+            color: var(--text-primary);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-fast);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        button, input, select, textarea {
+            font-family: inherit;
+            font-size: inherit;
+            outline: none;
+            border: none;
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--royal-gold);
+            border-radius: 5px;
+        }
+
+        /* ==========================================================================
+           2. REUSABLE UTILITIES & COMPONENTS
+           ========================================================================== */
+        .container {
+            width: 100%;
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-padding {
+            padding: 7rem 0;
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF0B9 0%, #D4AF37 50%, #AA820A 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem auto;
+        }
+
+        .section-badge {
+            display: inline-block;
+            padding: 0.4rem 1.2rem;
+            background: rgba(212, 175, 55, 0.12);
+            border: 1px solid var(--royal-gold);
+            color: var(--royal-gold);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .section-description {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .btn-luxury {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 0.9rem 2.2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.25);
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #E6C252 0%, #D4AF37 50%, #B89218 100%);
+            color: var(--navy-dark);
+        }
+
+        .btn-gold::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, #FFFFFF 0%, #E6C252 100%);
+            z-index: -1;
+            opacity: 0;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-gold:hover::before {
+            opacity: 1;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-outline-gold {
+            background: transparent;
+            color: var(--royal-gold);
+            border: 1px solid var(--royal-gold);
+            box-shadow: none;
+        }
+
+        .btn-outline-gold:hover {
+            background: rgba(212, 175, 55, 0.15);
+            transform: translateY(-3px);
+            color: #FFF;
+        }
+
+        .glass-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            box-shadow: var(--shadow-card);
+            transition: var(--transition-smooth);
+        }
+
+        .glass-card:hover {
+            border-color: var(--royal-gold);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), var(--shadow-gold);
+        }
+
+        /* Reading Progress Bar */
+        #scroll-progress {
+            position: fixed;
+            top: 0; left: 0;
+            height: 4px;
+            width: 0%;
+            background: linear-gradient(90deg, #D4AF37, #FFF0B9);
+            z-index: 10000;
+            transition: width 0.1s linear;
+        }
+
+        /* Back to Top Button */
+        #back-to-top {
+            position: fixed;
+            bottom: 2.5rem;
+            right: 2.5rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--royal-gold);
+            color: var(--navy-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 9999;
+            transition: var(--transition-smooth);
+        }
+
+        #back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #back-to-top:hover {
+            transform: translateY(-5px) scale(1.08);
+            background: #FFF;
+        }
+
+        /* ==========================================================================
+           3. LOADING SCREEN
+           ========================================================================== */
+        #loader {
+            position: fixed;
+            inset: 0;
+            background: var(--navy-dark);
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        #loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-logo-ring {
+            width: 130px;
+            height: 130px;
+            border: 3px solid rgba(212, 175, 55, 0.15);
+            border-top: 3px solid var(--royal-gold);
+            border-bottom: 3px solid var(--royal-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: spinRing 2s linear infinite;
+            margin-bottom: 1.5rem;
+        }
+
+        .loader-crest {
+            font-size: 2.5rem;
+            color: var(--royal-gold);
+            animation: pulseCrest 1.5s ease-in-out infinite alternate;
+        }
+
+        .loader-text {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            letter-spacing: 3px;
+            color: var(--pure-white);
+            margin-bottom: 0.5rem;
+        }
+
+        .loader-subtext {
+            color: var(--royal-gold);
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        @keyframes spinRing {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes pulseCrest {
+            0% { transform: scale(0.9); opacity: 0.7; }
+            100% { transform: scale(1.1); opacity: 1; }
+        }
+
+        /* ==========================================================================
+           4. STICKY NAVIGATION BAR
+           ========================================================================== */
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            z-index: 999;
+            padding: 1.2rem 0;
+            transition: var(--transition-smooth);
+            background: rgba(7, 19, 37, 0.4);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .navbar.scrolled {
+            padding: 0.8rem 0;
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .brand-crest {
+            font-size: 1.8rem;
+            color: var(--royal-gold);
+        }
+
+        .brand-name {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: var(--text-primary);
+            line-height: 1;
+        }
+
+        .brand-sub {
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            color: var(--royal-gold);
+            text-transform: uppercase;
+            display: block;
+            margin-top: 3px;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            position: relative;
+            padding: 0.4rem 0;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; width: 0; height: 2px;
+            background: var(--royal-gold);
+            transition: var(--transition-smooth);
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--royal-gold);
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .theme-toggle-btn {
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid var(--border-color);
+            color: var(--royal-gold);
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            transition: var(--transition-smooth);
+        }
+
+        .theme-toggle-btn:hover {
+            background: var(--royal-gold);
+            color: var(--navy-dark);
+            transform: rotate(30deg);
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            cursor: pointer;
+        }
+
+        /* ==========================================================================
+           5. HERO SECTION
+           ========================================================================== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(7, 19, 37, 0.75), rgba(7, 19, 37, 0.85)),
+                        url('https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat fixed;
+            padding-top: 6rem;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 950px;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .hero-typing-wrap {
+            font-size: clamp(1.1rem, 2vw, 1.6rem);
+            color: var(--royal-gold);
+            font-weight: 500;
+            min-height: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .typing-cursor {
+            display: inline-block;
+            width: 3px;
+            background-color: var(--royal-gold);
+            margin-left: 4px;
+            animation: blinkCursor 0.8s infinite;
+        }
+
+        @keyframes blinkCursor {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .hero-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 4rem;
+        }
+
+        .hero-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--royal-gold);
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .scroll-down-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            animation: bounceIndicator 2s infinite;
+        }
+
+        @keyframes bounceIndicator {
+            0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
+            40% { transform: translate(-50%, -10px); }
+            60% { transform: translate(-50%, -5px); }
+        }
+
+        /* ==========================================================================
+           6. ABOUT SCHOOL SECTION
+           ========================================================================== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 5rem;
+        }
+
+        .about-image-stack {
+            position: relative;
+        }
+
+        .about-img-main {
+            border-radius: 20px;
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border-color);
+        }
+
+        .about-floating-badge {
+            position: absolute;
+            bottom: -2rem;
+            right: -2rem;
+            padding: 1.8rem;
+            max-width: 260px;
+            text-align: center;
+        }
+
+        .badge-years {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--royal-gold);
+            line-height: 1;
+        }
+
+        .about-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .value-card {
+            padding: 2.5rem 1.8rem;
+            text-align: center;
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            color: var(--royal-gold);
+            margin-bottom: 1.2rem;
+        }
+
+        /* Principal Message */
+        .principal-box {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 3rem;
+            align-items: center;
+            padding: 3rem;
+        }
+
+        .principal-img {
+            border-radius: 15px;
+            object-fit: cover;
+            width: 100%;
+            height: 380px;
+            border: 2px solid var(--royal-gold);
+        }
+
+        .principal-quote {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            position: relative;
+        }
+
+        .principal-quote::before {
+            content: '“';
+            font-size: 4rem;
+            color: var(--royal-gold);
+            position: absolute;
+            top: -1.5rem;
+            left: -1.5rem;
+            opacity: 0.3;
+        }
+
+        /* Timeline */
+        .timeline-wrap {
+            position: relative;
+            max-width: 900px;
+            margin: 4rem auto 0 auto;
+        }
+
+        .timeline-wrap::before {
+            content: '';
+            position: absolute;
+            top: 0; bottom: 0; left: 50%;
+            width: 2px;
+            background: var(--royal-gold);
+            transform: translateX(-50%);
+            opacity: 0.3;
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 30px;
+            position: relative;
+            margin-bottom: 3rem;
+            width: 50%;
+        }
+
+        .timeline-item:nth-child(even) {
+            align-self: flex-end;
+            margin-left: 50%;
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: 30px;
+        }
+
+        .timeline-dot {
+            width: 18px;
+            height: 18px;
+            background: var(--royal-gold);
+            border-radius: 50%;
+            position: absolute;
+            top: 15px;
+            right: -9px;
+            box-shadow: 0 0 15px var(--royal-gold);
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            right: auto;
+            left: -9px;
+        }
+
+        .timeline-content {
+            padding: 1.5rem;
+        }
+
+        .timeline-year {
+            color: var(--royal-gold);
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        /* ==========================================================================
+           7. ACADEMICS SECTION
+           ========================================================================== */
+        .academics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .academic-card {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .academic-img {
+            height: 220px;
+            width: 100%;
+            object-fit: cover;
+            transition: var(--transition-smooth);
+        }
+
+        .academic-card:hover .academic-img {
+            transform: scale(1.08);
+        }
+
+        .academic-body {
+            padding: 2rem;
+        }
+
+        .academic-badge {
+            font-size: 0.75rem;
+            color: var(--royal-gold);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        /* ==========================================================================
+           8. FACILITIES SECTION
+           ========================================================================== */
+        .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .facility-card {
+            padding: 2rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .facility-icon-wrap {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.12);
+            border: 1px solid var(--royal-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--royal-gold);
+            margin-bottom: 1.2rem;
+            transition: var(--transition-smooth);
+        }
+
+        .facility-card:hover .facility-icon-wrap {
+            background: var(--royal-gold);
+            color: var(--navy-dark);
+            transform: rotateY(180deg);
+        }
+
+        .facility-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.6rem;
+        }
+
+        /* ==========================================================================
+           9. FACULTY SECTION
+           ========================================================================== */
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .faculty-card {
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .faculty-img-wrap {
+            position: relative;
+            height: 350px;
+            overflow: hidden;
+        }
+
+        .faculty-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-smooth);
+        }
+
+        .faculty-card:hover .faculty-img {
+            transform: scale(1.06);
+        }
+
+        .faculty-socials {
+            position: absolute;
+            bottom: -50px;
+            left: 0; width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(7, 19, 37, 0.85);
+            backdrop-filter: blur(10px);
+            transition: var(--transition-smooth);
+        }
+
+        .faculty-card:hover .faculty-socials {
+            bottom: 0;
+        }
+
+        .faculty-social-link {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--royal-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        .faculty-social-link:hover {
+            background: var(--royal-gold);
+            color: var(--navy-dark);
+        }
+
+        .faculty-info {
+            padding: 1.8rem;
+        }
+
+        .faculty-role {
+            color: var(--royal-gold);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.4rem;
+            display: block;
+        }
+
+        /* ==========================================================================
+           10. STUDENT LIFE SECTION
+           ========================================================================== */
+        .clubs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .club-card {
+            padding: 2.2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .club-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--royal-gold);
+            border: 1px solid var(--royal-gold);
+        }
+
+        /* ==========================================================================
+           11. GALLERY SECTION (MASONRY & LIGHTBOX)
+           ========================================================================== */
+        .gallery-filter-wrap {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .filter-btn {
+            padding: 0.6rem 1.8rem;
+            border-radius: 50px;
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-light);
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition-smooth);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--royal-gold);
+            color: var(--navy-dark);
+            border-color: var(--royal-gold);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 280px;
+            cursor: pointer;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-smooth);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(7, 19, 37, 0.9), transparent);
+            opacity: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.5rem;
+            transition: var(--transition-smooth);
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* Lightbox Modal */
+        #lightbox-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.92);
+            z-index: 100000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-smooth);
+            padding: 2rem;
+        }
+
+        #lightbox-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .lightbox-img-wrap {
+            position: relative;
+            max-width: 90%;
+            max-height: 85vh;
+        }
+
+        #lightbox-img {
+            max-width: 100%;
+            max-height: 85vh;
+            border-radius: 10px;
+            border: 2px solid var(--royal-gold);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 2.5rem;
+            font-size: 2.5rem;
+            color: #FFF;
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+
+        .lightbox-close:hover {
+            color: var(--royal-gold);
+        }
+
+        /* ==========================================================================
+           12. ACHIEVEMENTS SECTION
+           ========================================================================== */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .achievement-card {
+            padding: 2.5rem;
+            border-left: 4px solid var(--royal-gold);
+        }
+
+        .achievement-icon {
+            font-size: 2.2rem;
+            color: var(--royal-gold);
+            margin-bottom: 1rem;
+        }
+
+        /* ==========================================================================
+           13. EVENTS SECTION
+           ========================================================================== */
+        .events-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .featured-event-box {
+            padding: 3rem;
+            position: relative;
+        }
+
+        .event-countdown {
+            display: flex;
+            gap: 1.2rem;
+            margin: 2rem 0;
+        }
+
+        .countdown-unit {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--royal-gold);
+            padding: 1rem 1.2rem;
+            border-radius: 12px;
+            text-align: center;
+            min-width: 80px;
+        }
+
+        .countdown-num {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--royal-gold);
+            line-height: 1;
+        }
+
+        .countdown-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .event-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .event-mini-card {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.2rem 1.8rem;
+        }
+
+        .event-date-badge {
+            background: var(--royal-gold);
+            color: var(--navy-dark);
+            padding: 0.8rem 1.2rem;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 800;
+            line-height: 1.2;
+            min-width: 70px;
+        }
+
+        /* ==========================================================================
+           14. TESTIMONIALS CAROUSEL
+           ========================================================================== */
+        .testimonial-slider {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 2rem 0;
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .testimonial-slide {
+            min-width: 100%;
+            padding: 0 1rem;
+            box-sizing: border-box;
+        }
+
+        .testimonial-card-inner {
+            padding: 3.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1.5rem auto;
+            border: 2px solid var(--royal-gold);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .slider-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid var(--royal-gold);
+            color: var(--royal-gold);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-smooth);
+        }
+
+        .slider-btn:hover {
+            background: var(--royal-gold);
+            color: var(--navy-dark);
+        }
+
+        .slider-dots {
+            display: flex;
+            gap: 0.6rem;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+
+        .dot.active {
+            background: var(--royal-gold);
+            width: 28px;
+            border-radius: 10px;
+        }
+
+        /* ==========================================================================
+           15. ADMISSIONS SECTION & TABLES
+           ========================================================================== */
+        .fee-table-wrap {
+            overflow-x: auto;
+            margin: 3rem 0;
+        }
+
+        .luxury-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .luxury-table th {
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--royal-gold);
+            padding: 1.2rem 1.5rem;
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+        }
+
+        .luxury-table td {
+            padding: 1.2rem 1.5rem;
+            border-bottom: 1px solid var(--border-light);
+            color: var(--text-secondary);
+        }
+
+        .luxury-table tr:hover td {
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .admission-form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        .form-label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .form-control {
+            padding: 0.9rem 1.2rem;
+            border-radius: 10px;
+            background: rgba(7, 19, 37, 0.6);
+            border: 1px solid var(--border-light);
+            color: var(--text-primary);
+            transition: var(--transition-fast);
+        }
+
+        .form-control:focus {
+            border-color: var(--royal-gold);
+            box-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
+        }
+
+        /* ==========================================================================
+           16. FAQ ACCORDION SECTION
+           ========================================================================== */
+        .faq-wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .faq-item {
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .faq-header {
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .faq-icon {
+            color: var(--royal-gold);
+            transition: transform 0.4s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.4s ease;
+            padding: 0 2rem;
+            color: var(--text-secondary);
+        }
+
+        .faq-item.active .faq-body {
+            max-height: 300px;
+            padding: 0 2rem 1.5rem 2rem;
+        }
+
+        /* ==========================================================================
+           17. CONTACT & FOOTER
+           ========================================================================== */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 3.5rem;
+        }
+
+        .contact-info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.12);
+            border: 1px solid var(--royal-gold);
+            color: var(--royal-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .footer {
+            background: var(--navy-dark);
+            border-top: 1px solid var(--border-color);
+            padding: 5rem 0 2rem 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+        }
+
+        .footer-links a:hover {
+            color: var(--royal-gold);
+            padding-left: 5px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-light);
+            padding-top: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* ==========================================================================
+           18. RESPONSIVE BREAKPOINTS
+           ========================================================================== */
+        @media (max-width: 1024px) {
+            .hero-stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .about-grid, .principal-box, .events-wrap, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .principal-img {
+                height: 300px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+            .nav-menu {
+                position: fixed;
+                top: 80px; left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--navy-dark);
+                flex-direction: column;
+                justify-content: center;
+                transition: var(--transition-smooth);
+            }
+            .nav-menu.active {
+                left: 0;
+            }
+            .about-cards-grid, .admission-form-grid {
+                grid-template-columns: 1fr;
+            }
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Reading Progress Bar -->
+    <div id="scroll-progress"></div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- ==========================================================================
+       1. LOADING SCREEN
+       ========================================================================== -->
+    <div id="loader">
+        <div class="loader-logo-ring">
+            <i class="fa-solid fa-crown loader-crest"></i>
+        </div>
+        <div class="loader-text">THE KARTIK'S ROYALAS</div>
+        <div class="loader-subtext">International Academy</div>
+    </div>
+
+    <!-- ==========================================================================
+       2. NAVIGATION BAR
+       ========================================================================== -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#hero" class="nav-brand">
+                <i class="fa-solid fa-crown brand-crest"></i>
+                <div>
+                    <span class="brand-name">THE KARTIK'S ROYALAS</span>
+                    <span class="brand-sub">International Academy</span>
+                </div>
+            </a>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#hero" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#academics" class="nav-link">Academics</a></li>
+                <li><a href="#facilities" class="nav-link">Facilities</a></li>
+                <li><a href="#faculty" class="nav-link">Faculty</a></li>
+                <li><a href="#life" class="nav-link">Student Life</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#achievements" class="nav-link">Achievements</a></li>
+                <li><a href="#events" class="nav-link">Events</a></li>
+                <li><a href="#admissions" class="nav-link">Admissions</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <a href="#admissions" class="btn-luxury btn-gold" style="padding: 0.6rem 1.4rem; font-size: 0.85rem;">Apply Now</a>
+                <div class="mobile-toggle" id="mobile-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- ==========================================================================
+           3. HERO SECTION
+           ========================================================================== -->
+        <section id="hero" class="hero">
+            <div class="container hero-content">
+                <div class="section-badge">Empowering Tomorrow's Global Monarchs</div>
+                <h1 class="hero-title">Shaping Visionary Leaders at <span class="gold-gradient-text">The Kartik's Royalas</span></h1>
+                
+                <div class="hero-typing-wrap">
+                    <span id="typing-text"></span><span class="typing-cursor"></span>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="#admissions" class="btn-luxury btn-gold">
+                        <i class="fa-solid fa-paper-plane"></i> Explore Admissions 2026
+                    </a>
+                    <a href="#about" class="btn-luxury btn-outline-gold">
+                        <i class="fa-solid fa-compass"></i> Virtual Campus Tour
+                    </a>
+                </div>
+
+                <div class="hero-stats-grid">
+                    <div class="glass-card stat-card">
+                        <div class="stat-number" data-target="10000">0</div>
+                        <div class="stat-label">Global Alumni & Students</div>
+                    </div>
+                    <div class="glass-card stat-card">
+                        <div class="stat-number" data-target="500">0</div>
+                        <div class="stat-label">PhD & Masters Educators</div>
+                    </div>
+                    <div class="glass-card stat-card">
+                        <div class="stat-number" data-target="50">0</div>
+                        <div class="stat-label">International Awards</div>
+                    </div>
+                    <div class="glass-card stat-card">
+                        <div class="stat-number" data-target="100">0</div>
+                        <div class="stat-label">% Ivy League Acceptance</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-down-indicator">
+                <span>SCROLL TO EXPLORE</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+           4. ABOUT SCHOOL SECTION
+           ========================================================================== -->
+        <section id="about" class="section-padding">
+            <div class="container">
+                <div class="about-grid">
+                    <div>
+                        <div class="section-badge">Centuries of Heritage</div>
+                        <h2 class="section-title">A Tradition of Intellectual & Moral Supremacy</h2>
+                        <p class="section-description" style="margin-bottom: 1.5rem;">
+                            Founded on the principles of academic rigor, character fortification, and global stewardship, The Kartik's Royalas International Academy stands as a beacon of world-class education for international scholars.
+                        </p>
+                        <p class="section-description">
+                            Our sprawling 150-acre ultra-smart campus integrates state-of-the-art AI laboratories, Olympic-grade sports infrastructure, and immersive digital learning environments designed to cultivate elite critical thinkers.
+                        </p>
+                    </div>
+                    <div class="about-image-stack">
+                        <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80" alt="Academy Campus" class="about-img-main">
+                        <div class="glass-card about-floating-badge">
+                            <div class="badge-years">50+</div>
+                            <div style="font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">Years of Academic Prestige</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vision Mission Values -->
+                <div class="about-cards-grid">
+                    <div class="glass-card value-card">
+                        <i class="fa-solid fa-eye value-icon"></i>
+                        <h3 style="margin-bottom: 0.8rem;">Our Vision</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">To redefine global leadership education by instilling ethical responsibility, technological fluency, and intellectual courage in every student.</p>
+                    </div>
+                    <div class="glass-card value-card">
+                        <i class="fa-solid fa-bullseye value-icon"></i>
+                        <h3 style="margin-bottom: 0.8rem;">Our Mission</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">Providing an unmatched holistic curriculum that empowers minds, nurtures artistic expression, and builds elite athletic capabilities.</p>
+                    </div>
+                    <div class="glass-card value-card">
+                        <i class="fa-solid fa-shield-halved value-icon"></i>
+                        <h3 style="margin-bottom: 0.8rem;">Core Values</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">Integrity, Innovation, Philanthropy, Global Citizenship, and Unwavering Commitment to Intellectual Mastery.</p>
+                    </div>
+                </div>
+
+                <!-- Principal Message -->
+                <div class="glass-card principal-box">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Headmistress" class="principal-img">
+                    <div>
+                        <div class="section-badge">Headmistress Address</div>
+                        <h3 style="font-size: 2rem; margin-bottom: 1rem;">Dr. Eleanor Vance, Ph.D. (Oxford)</h3>
+                        <div class="principal-quote">
+                            "At The Kartik's Royalas, we do not merely educate students for examinations; we prepare them to command the future with wisdom, empathy, and groundbreaking innovation."
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">
+                            Former Fellow at Harvard Graduate School of Education and International Baccalaureate Board Advisor.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline -->
+                <div class="timeline-wrap">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="glass-card timeline-content">
+                            <div class="timeline-year">1975</div>
+                            <h4 style="margin-bottom: 0.4rem;">Foundation of The Kartik's Royalas</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">Established by Royal Charter as a premier international boarding institution.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="glass-card timeline-content">
+                            <div class="timeline-year">2002</div>
+                            <h4 style="margin-bottom: 0.4rem;">IB World School Accreditation</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">Achieved full accreditation for Primary, Middle, and Diploma Programmes.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="glass-card timeline-content">
+                            <div class="timeline-year">2018</div>
+                            <h4 style="margin-bottom: 0.4rem;">Smart AI & Quantum Lab Launch</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">Integrated multi-million dollar AI research facilities for high-school scholars.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="glass-card timeline-content">
+                            <div class="timeline-year">2026</div>
+                            <h4 style="margin-bottom: 0.4rem;">Global 100% Ivy Acceptance Milestone</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">Celebrating our graduating class receiving placement in top 15 global universities.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+           5. ACADEMICS SECTION
+           ========================================================================== -->
+        <section id="academics" class="section-padding" style="background: rgba(0,0,0,0.15);">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">Academic Spectrum</div>
+                    <h2 class="section-title">World-Class Curricula & Specialized Programs</h2>
+                    <p class="section-description">From Early Years exploration to advanced Quantum AI research, our pedagogical pathways foster lifelong mastery.</p>
+                </div>
+
+                <div class="academics-grid">
+                    <div class="glass-card academic-card">
+                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80" alt="Kindergarten" class="academic-img">
+                        <div class="academic-body">
+                            <span class="academic-badge">Ages 3 - 5</span>
+                            <h3 style="margin-bottom: 0.8rem;">Royal Early Years</h3>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">Montessori & Reggio Emilia inspired play-based learning focus on cognitive development and language acquisition.</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card academic-card">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80" alt="Primary" class="academic-img">
+                        <div class="academic-body">
+                            <span class="academic-badge">Grades 1 - 5</span>
+                            <h3 style="margin-bottom: 0.8rem;">Primary PYP School</h3>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">IB Primary Years Programme developing inquiry-driven analytical thinking and global awareness.</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card academic-card">
+                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80" alt="Robotics & AI" class="academic-img">
+                        <div class="academic-body">
+                            <span class="academic-badge">STEM & Innovation</span>
+                            <h3 style="margin-bottom: 0.8rem;">Artificial Intelligence & Robotics</h3>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">Hands-on machine learning, Python coding, autonomous robotics engineering, and IoT laboratory work.</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card academic-card">
+                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80" alt="Senior Secondary" class="academic-img">
+                        <div class="academic-body">
+                            <span class="academic-badge">Grades 11 - 12</span>
+                            <h3 style="margin-bottom: 0.8rem;">IB Diploma & AP Academy</h3>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">Rigorous pre-university courses preparing scholars for Ivy League admission with college credits.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+           6. FACILITIES SECTION
+           ========================================================================== -->
+        <section id="facilities" class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">Infrastructure</div>
+                    <h2 class="section-title">22+ State-of-the-Art Luxury Facilities</h2>
+                    <p class="section-description">Engineered for academic brilliance, athletic triumphs, and artistic expression.</p>
+                </div>
+
+                <div class="facilities-grid">
+                    <div class="glass-card facility-card">
+                        <div class="facility-icon-wrap"><i class="fa-solid fa-laptop-code"></i></div>
+                        <h3 class="facility-title">AI & Robotics Lab</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem;">Equipped with NVIDIA H100 servers & 3D printers.</p>
+                    </div>
+
+                    <div class="glass-card facility-card">
+                        <div class="facility-icon-wrap"><i class="fa-solid fa-book-bookmark"></i></div>
+                        <h3 class="facility-title">Digital Library</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem;">Access to 500,000+ global journals and e-books.</p>
+                    </div>
+
+                    <div class="glass-card facility-card">
+                        <div class="facility-icon-wrap"><i class="fa-solid fa-water-ladder"></i></div>
+                        <h3 class="facility-title">Olympic Pool</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem;">Temperature controlled 50m competitive swimming pool.</p>
+                    </div>
+
+                    <div class="glass-card facility-card">
+                        <div class="facility-icon-wrap"><i class="fa-solid fa-flask-vial"></i></div>
+                        <h3 class="facility-title">Quantum Physics Lab</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem;">Advanced experimental apparatus for research projects.</p>
+                    </div>
+
+                    <div class="glass-card facility-card">
+                        <div class="facility-icon-wrap"><i class="fa-solid fa-music"></i></div>
+                        <h3 class="facility-title">Acoustic Music Studio</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem;">Professional sound recording booth and orchestral hall.</p>
+                    </div>
+
+                    <div class="glass-card facility-card">
+                        <div class="facility-icon-wrap"><i class="fa-solid fa-shield-virus"></i></div>
+                        <h3 class="facility-title">Biometric Security</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem;">24/7 AI-monitored campus surveillance & smart access.</p>
+                    </div>
+
+                    <div class="glass-card facility-card">
+                        <div class="facility-icon-wrap"><i class="fa-solid fa-bed"></i></div>
+                        <h3 class="facility-title">Luxury Hostels</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem;">5-star suite accommodation for boarding scholars.</p>
+                    </div>
+
+                    <div class="glass-card facility-card">
+                        <div class="facility-icon-wrap"><i class="fa-solid fa-utensils"></i></div>
+                        <h3 class="facility-title">Organic Gourmet Cafe</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem;">Michelin-trained chefs crafting balanced global dining.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+           7. FACULTY SECTION
+           ========================================================================== -->
+        <section id="faculty" class="section-padding" style="background: rgba(0,0,0,0.15);">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">World-Class Educators</div>
+                    <h2 class="section-title">Distinguished Global Faculty</h2>
+                    <p class="section-description">Mentored by scholars from Oxford, Cambridge, MIT, Harvard, and Stanford.</p>
+                </div>
+
+                <div class="faculty-grid">
+                    <div class="glass-card faculty-card">
+                        <div class="faculty-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80" alt="Prof. Katherine Vance" class="faculty-img">
+                            <div class="faculty-socials">
+                                <a href="#" class="faculty-social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+                                <a href="#" class="faculty-social-link"><i class="fa-solid fa-envelope"></i></a>
+                            </div>
+                        </div>
+                        <div class="faculty-info">
+                            <span class="faculty-role">Dean of STEM Education</span>
+                            <h3 style="margin-bottom: 0.3rem;">Prof. Katherine Vance</h3>
+                            <p style="color: var(--text-muted); font-size: 0.85rem;">Ph.D. Quantum Mechanics (Cambridge)</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card faculty-card">
+                        <div class="faculty-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80" alt="Dr. Marcus Sterling" class="faculty-img">
+                            <div class="faculty-socials">
+                                <a href="#" class="faculty-social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+                                <a href="#" class="faculty-social-link"><i class="fa-solid fa-envelope"></i></a>
+                            </div>
+                        </div>
+                        <div class="faculty-info">
+                            <span class="faculty-role">Head of Humanities</span>
+                            <h3 style="margin-bottom: 0.3rem;">Dr. Marcus Sterling</h3>
+                            <p style="color: var(--text-muted); font-size: 0.85rem;">Ph.D. International Relations (Oxford)</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card faculty-card">
+                        <div class="faculty-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=500&q=80" alt="Elena Rostova" class="faculty-img">
+                            <div class="faculty-socials">
+                                <a href="#" class="faculty-social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+                                <a href="#" class="faculty-social-link"><i class="fa-solid fa-envelope"></i></a>
+                            </div>
+                        </div>
+                        <div class="faculty-info">
+                            <span class="faculty-role">Director of Fine Arts</span>
+                            <h3 style="margin-bottom: 0.3rem;">Elena Rostova</h3>
+                            <p style="color: var(--text-muted); font-size: 0.85rem;">M.F.A. Royal Academy of Arts London</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+           8. STUDENT LIFE SECTION
+           ========================================================================== -->
+        <section id="life" class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">Beyond the Classroom</div>
+                    <h2 class="section-title">Vibrant Student Life & Clubs</h2>
+                    <p class="section-description">Building leadership, passion, and camaraderie through 40+ specialized student organizations.</p>
+                </div>
+
+                <div class="clubs-grid">
+                    <div class="glass-card club-card">
+                        <span class="club-badge">STEM</span>
+                        <h3 style="margin-bottom: 0.8rem;"><i class="fa-solid fa-microchip gold-gradient-text" style="margin-right: 8px;"></i> AI & Autonomous Systems Club</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Building neural network models, competing in global hackathons, and developing autonomous drone technology.</p>
+                    </div>
+
+                    <div class="glass-card club-card">
+                        <span class="club-badge">Leadership</span>
+                        <h3 style="margin-bottom: 0.8rem;"><i class="fa-solid fa-landmark gold-gradient-text" style="margin-right: 8px;"></i> Model United Nations (MUN)</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Debating international diplomacy policies at Harvard and Geneva student summits.</p>
+                    </div>
+
+                    <div class="glass-card club-card">
+                        <span class="club-badge">Arts</span>
+                        <h3 style="margin-bottom: 0.8rem;"><i class="fa-solid fa-masks-theater gold-gradient-text" style="margin-right: 8px;"></i> Royal Conservatory Drama Guild</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Staging Broadway-quality theatrical productions in our 1,200-seat amphitheater.</p>
+                    </div>
+
+                    <div class="glass-card club-card">
+                        <span class="club-badge">Sports</span>
+                        <h3 style="margin-bottom: 0.8rem;"><i class="fa-solid fa-trophy gold-gradient-text" style="margin-right: 8px;"></i> Elite Equestrian & Sailing Society</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Professional equestrian jumping and competitive yacht racing along coastal waters.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+           9. GALLERY SECTION (MASONRY & LIGHTBOX)
+           ========================================================================== -->
+        <section id="gallery" class="section-padding" style="background: rgba(0,0,0,0.15);">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">Visual Showcase</div>
+                    <h2 class="section-title">Life at The Kartik's Royalas</h2>
+                    <p class="section-description">A glimpse into our campus aesthetics, activities, and milestones.</p>
+                </div>
+
+                <div class="gallery-filter-wrap">
+                    <button class="filter-btn active" data-filter="all">All Photos</button>
+                    <button class="filter-btn" data-filter="campus">Campus</button>
+                    <button class="filter-btn" data-filter="academics">Academics</button>
+                    <button class="filter-btn" data-filter="sports">Sports</button>
+                </div>
+
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-category="campus">
+                        <img src="https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=800&q=80" alt="Main Heritage Hall" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h4 style="color: #FFF; font-size: 1.1rem;">Main Heritage Quadrangle</h4>
+                            <p style="color: var(--royal-gold); font-size: 0.85rem;">Architectural Grandeur</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="academics">
+                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80" alt="Smart Classrooms" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h4 style="color: #FFF; font-size: 1.1rem;">Interactive Digital Classrooms</h4>
+                            <p style="color: var(--royal-gold); font-size: 0.85rem;">Collaborative Learning</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="sports">
+                        <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=800&q=80" alt="Olympic Swimming Pool" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h4 style="color: #FFF; font-size: 1.1rem;">Aquatics Complex</h4>
+                            <p style="color: var(--royal-gold); font-size: 0.85rem;">Olympic Standard Facilities</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="academics">
+                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80" alt="Science Lab" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h4 style="color: #FFF; font-size: 1.1rem;">Bio-Molecular Laboratory</h4>
+                            <p style="color: var(--royal-gold); font-size: 0.85rem;">Advanced Student Research</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="sports">
+                        <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80" alt="Stadium" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h4 style="color: #FFF; font-size: 1.1rem;">International Sports Turf</h4>
+                            <p style="color: var(--royal-gold); font-size: 0.85rem;">Football & Track Arena</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="campus">
+                        <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=80" alt="Digital Library" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h4 style="color: #FFF; font-size: 1.1rem;">Royalas Grand Library</h4>
+                            <p style="color: var(--royal-gold); font-size: 0.85rem;">Knowledge Sanctuary</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox Popup Modal -->
+        <div id="lightbox-modal">
+            <span class="lightbox-close" id="lightbox-close">&times;</span>
+            <div class="lightbox-img-wrap">
+                <img src="" id="lightbox-img" alt="Enlarged View">
+            </div>
+        </div>
+
+        <!-- ==========================================================================
+           10. ACHIEVEMENTS SECTION
+           ========================================================================== -->
+        <section id="achievements" class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">Hall of Laurels</div>
+                    <h2 class="section-title">International Accolades & Triumphs</h2>
+                    <p class="section-description">Our scholars consistently break records across global Olympiads, Ivy League admissions, and innovation summits.</p>
+                </div>
+
+                <div class="achievements-grid">
+                    <div class="glass-card achievement-card">
+                        <i class="fa-solid fa-award achievement-icon"></i>
+                        <h3>1st Place - International Physics Olympiad 2025</h3>
+                        <p style="color: var(--text-secondary); margin-top: 0.5rem;">Gold medal triumph competing against 95 nations in Tokyo.</p>
+                    </div>
+
+                    <div class="glass-card achievement-card">
+                        <i class="fa-solid fa-graduation-cap achievement-icon"></i>
+                        <h3>100% Acceptance at Global Top 20 Universities</h3>
+                        <p style="color: var(--text-secondary); margin-top: 0.5rem;">Graduates admitted to Harvard, Stanford, Cambridge, MIT, and Oxford.</p>
+                    </div>
+
+                    <div class="glass-card achievement-card">
+                        <i class="fa-solid fa-robot achievement-icon"></i>
+                        <h3>World Robotics Championship Winners</h3>
+                        <p style="color: var(--text-secondary); margin-top: 0.5rem;">Autonomous drone navigation award at FIRST Global Challenge.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+           11. EVENTS SECTION WITH COUNTDOWN TIMER
+           ========================================================================== -->
+        <section id="events" class="section-padding" style="background: rgba(0,0,0,0.15);">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">Upcoming Events</div>
+                    <h2 class="section-title">Global Symposia & Exhibitions</h2>
+                    <p class="section-description">Join our thought leadership forums and academic showcases.</p>
+                </div>
+
+                <div class="events-wrap">
+                    <div class="glass-card featured-event-box">
+                        <div class="section-badge">FEATURED GLOBAL SUMMIT</div>
+                        <h3 style="font-size: 2rem; margin: 1rem 0;">International AI & Youth Ethics Forum 2026</h3>
+                        <p style="color: var(--text-secondary);">Keynote speakers include Nobel Laureates, Turing Award winners, and global AI leaders discussing ethics in technology.</p>
+
+                        <div class="event-countdown" id="event-countdown">
+                            <div class="countdown-unit">
+                                <div class="countdown-num" id="cd-days">45</div>
+                                <div class="countdown-label">Days</div>
+                            </div>
+                            <div class="countdown-unit">
+                                <div class="countdown-num" id="cd-hours">12</div>
+                                <div class="countdown-label">Hours</div>
+                            </div>
+                            <div class="countdown-unit">
+                                <div class="countdown-num" id="cd-mins">34</div>
+                                <div class="countdown-label">Mins</div>
+                            </div>
+                            <div class="countdown-unit">
+                                <div class="countdown-num" id="cd-secs">50</div>
+                                <div class="countdown-label">Secs</div>
+                            </div>
+                        </div>
+
+                        <a href="#admissions" class="btn-luxury btn-gold">Reserve Guest Pass</a>
+                    </div>
+
+                    <div class="event-list">
+                        <div class="glass-card event-mini-card">
+                            <div class="event-date-badge">
+                                <div>15</div>
+                                <div style="font-size: 0.75rem; text-transform: uppercase;">OCT</div>
+                            </div>
+                            <div>
+                                <h4 style="font-size: 1.1rem; margin-bottom: 0.3rem;">Royalas Symphony Orchestra Gala</h4>
+                                <p style="color: var(--text-muted); font-size: 0.85rem;"><i class="fa-regular fa-clock"></i> 6:00 PM | Grand Auditorium</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card event-mini-card">
+                            <div class="event-date-badge">
+                                <div>28</div>
+                                <div style="font-size: 0.75rem; text-transform: uppercase;">NOV</div>
+                            </div>
+                            <div>
+                                <h4 style="font-size: 1.1rem; margin-bottom: 0.3rem;">Ivy League & Oxbridge Career Fair</h4>
+                                <p style="color: var(--text-muted); font-size: 0.85rem;"><i class="fa-regular fa-clock"></i> 10:00 AM | Exhibition Center</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card event-mini-card">
+                            <div class="event-date-badge">
+                                <div>10</div>
+                                <div style="font-size: 0.75rem; text-transform: uppercase;">DEC</div>
+                            </div>
+                            <div>
+                                <h4 style="font-size: 1.1rem; margin-bottom: 0.3rem;">Annual Equestrian Showjumping Cup</h4>
+                                <p style="color: var(--text-muted); font-size: 0.85rem;"><i class="fa-regular fa-clock"></i> 2:00 PM | Royal Arena</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+           12. TESTIMONIALS SLIDER
+           ========================================================================== -->
+        <section id="testimonials" class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">Voices of Prestige</div>
+                    <h2 class="section-title">What Parents & Alumni Say</h2>
+                    <p class="section-description">Read perspectives from our esteemed international community.</p>
+                </div>
+
+                <div class="testimonial-slider">
+                    <div class="testimonial-track" id="testimonial-track">
+                        <!-- Slide 1 -->
+                        <div class="testimonial-slide">
+                            <div class="glass-card testimonial-card-inner">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Lord Harrington" class="author-avatar">
+                                <div style="color: var(--royal-gold); margin-bottom: 1rem; font-size: 1.2rem;">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <p style="font-size: 1.15rem; font-style: italic; margin-bottom: 1.5rem; color: var(--text-primary);">
+                                    "The Kartik's Royalas transformed my son into an articulate, confident thinker. His admission to Harvard University was a direct result of the school's extraordinary research mentorship."
+                                </p>
+                                <h4 style="font-size: 1.1rem;">Lord Arthur Harrington</h4>
+                                <span style="color: var(--royal-gold); font-size: 0.85rem;">Parent & Diplomat</span>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="testimonial-slide">
+                            <div class="glass-card testimonial-card-inner">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="Dr. Julian Chen" class="author-avatar">
+                                <div style="color: var(--royal-gold); margin-bottom: 1rem; font-size: 1.2rem;">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <p style="font-size: 1.15rem; font-style: italic; margin-bottom: 1.5rem; color: var(--text-primary);">
+                                    "The AI and Robotics laboratory at The Kartik's Royalas provided me with computing power that rivaled top university facilities. It ignited my tech career."
+                                </p>
+                                <h4 style="font-size: 1.1rem;">Dr. Julian Chen</h4>
+                                <span style="color: var(--royal-gold); font-size: 0.85rem;">Alumni, Class of 2019 (Stanford Ph.D.)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slider-controls">
+                        <button class="slider-btn" id="prev-test"><i class="fa-solid fa-chevron-left"></i></button>
+                        <div class="slider-dots" id="slider-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <button class="slider-btn" id="next-test"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+           13. ADMISSIONS SECTION & ONLINE FORM
+           ========================================================================== -->
+        <section id="admissions" class="section-padding" style="background: rgba(0,0,0,0.15);">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">Join Our Legacy</div>
+                    <h2 class="section-title">Admissions Process & Enrollment</h2>
+                    <p class="section-description">We invite visionary young scholars to apply for the Academic Year 2026-2027.</p>
+                </div>
+
+                <!-- Fee Structure Table -->
+                <h3 style="text-align: center; margin-bottom: 1.5rem;" class="gold-gradient-text">Annual Fee Structure (2026 - 2027)</h3>
+                <div class="fee-table-wrap">
+                    <table class="luxury-table glass-card">
+                        <thead>
+                            <tr>
+                                <th>Grade Level</th>
+                                <th>Tuition Fee ($)</th>
+                                <th>Lab & Smart Tech ($)</th>
+                                <th>Boarding & Gourmet ($)</th>
+                                <th>Total Annual ($)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Early Years (Kindergarten)</td>
+                                <td>$22,000</td>
+                                <td>$2,500</td>
+                                <td>Day Scholar</td>
+                                <td><strong>$24,500</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Primary School (Grades 1 - 5)</td>
+                                <td>$30,000</td>
+                                <td>$3,500</td>
+                                <td>$15,000 (Optional)</td>
+                                <td><strong>$48,500</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Middle School (Grades 6 - 8)</td>
+                                <td>$36,000</td>
+                                <td>$4,000</td>
+                                <td>$18,000</td>
+                                <td><strong>$58,000</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Senior Diploma (Grades 9 - 12)</td>
+                                <td>$45,000</td>
+                                <td>$5,000</td>
+                                <td>$20,000</td>
+                                <td><strong>$70,000</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Application Form -->
+                <div class="glass-card" style="padding: 3.5rem; margin-top: 4rem;">
+                    <h3 style="font-size: 2rem; margin-bottom: 2rem; text-align: center;">Online Student Application Form</h3>
+                    
+                    <form id="admission-form">
+                        <div class="admission-form-grid">
+                            <div class="form-group">
+                                <label class="form-label">Student Full Name *</label>
+                                <input type="text" class="form-control" required placeholder="e.g. Alexander Hamilton">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Parent / Guardian Name *</label>
+                                <input type="text" class="form-control" required placeholder="e.g. Victoria Hamilton">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Email Address *</label>
+                                <input type="email" class="form-control" required placeholder="e.g. guardian@domain.com">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Phone Number *</label>
+                                <input type="tel" class="form-control" required placeholder="+1 (555) 000-0000">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Grade Applying For *</label>
+                                <select class="form-control" required>
+                                    <option value="">Select Grade</option>
+                                    <option value="kindergarten">Early Years / Kindergarten</option>
+                                    <option value="primary">Primary School (Grades 1-5)</option>
+                                    <option value="middle">Middle School (Grades 6-8)</option>
+                                    <option value="senior">Senior IB Diploma (Grades 9-12)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Boarding Preference *</label>
+                                <select class="form-control" required>
+                                    <option value="day">Day Scholar</option>
+                                    <option value="boarding">Full Royal Boarding</option>
+                                </select>
+                            </div>
+                            <div class="form-group full-width">
+                                <label class="form-label">Student Statement / Achievements</label>
+                                <textarea class="form-control" rows="4" placeholder="Briefly describe the student's academic interests and extracurricular hobbies..."></textarea>
+                            </div>
+                        </div>
+
+                        <div style="text-align: center; margin-top: 2rem; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+                            <button type="submit" class="btn-luxury btn-gold">
+                                <i class="fa-solid fa-paper-plane"></i> Submit Formal Application
+                            </button>
+                            <button type="button" class="btn-luxury btn-outline-gold" onclick="alert('Downloading The Kartik\'s Royalas Prospectus 2026 (PDF)...');">
+                                <i class="fa-solid fa-file-pdf"></i> Download Prospectus
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+           14. FAQ ACCORDION SECTION
+           ========================================================================== -->
+        <section id="faq" class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">Questions & Answers</div>
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                    <p class="section-description">Clear answers regarding admissions, scholarships, and campus safety.</p>
+                </div>
+
+                <div class="faq-wrap">
+                    <div class="glass-card faq-item">
+                        <div class="faq-header">
+                            <span>What are the entrance examination requirements for IB Scholars?</span>
+                            <i class="fa-solid fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-body">
+                            Applicants undergo a cognitive assessment test, an English logic exam, and an interview with the Academic Dean to assess critical thinking and analytical capabilities.
+                        </div>
+                    </div>
+
+                    <div class="glass-card faq-item">
+                        <div class="faq-header">
+                            <span>Are merit scholarships available for exceptional students?</span>
+                            <i class="fa-solid fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-body">
+                            Yes, the Royal Founders Trust awards up to 100% full merit scholarships for students demonstrating exceptional prowess in STEM, Olympiads, music, or athletic performance.
+                        </div>
+                    </div>
+
+                    <div class="glass-card faq-item">
+                        <div class="faq-header">
+                            <span>How is student security maintained on the 150-acre campus?</span>
+                            <i class="fa-solid fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-body">
+                            Our campus is fortified with 24/7 AI-driven biometric security gates, perimeter sensors, registered medical staff, and professional security officers.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+           15. CONTACT SECTION
+           ========================================================================== -->
+        <section id="contact" class="section-padding" style="background: rgba(0,0,0,0.15);">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">Get In Touch</div>
+                    <h2 class="section-title">Connect with Admissions & Administration</h2>
+                    <p class="section-description">We welcome prospective parents and guests to visit our sanctuary of learning.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <div>
+                        <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">Contact Information</h3>
+                        <p style="color: var(--text-secondary);">Reach out to our international admissions office directly or schedule a private campus tour.</p>
+
+                        <div class="contact-info-list">
+                            <div class="contact-info-item">
+                                <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                                <div>
+                                    <h4 style="font-size: 1.05rem;">Campus Location</h4>
+                                    <p style="color: var(--text-muted); font-size: 0.9rem;">Royal Boulevard 100, Academic Estate, CA 90210</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                                <div>
+                                    <h4 style="font-size: 1.05rem;">Email Inquiry</h4>
+                                    <p style="color: var(--text-muted); font-size: 0.9rem;">admissions@kartiksroyalas.edu | info@kartiksroyalas.edu</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                                <div>
+                                    <h4 style="font-size: 1.05rem;">Direct Phone</h4>
+                                    <p style="color: var(--text-muted); font-size: 0.9rem;">+1 (800) 888-ROYAL | +1 (310) 555-0199</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map Placeholder / Embed Box -->
+                    <div class="glass-card" style="padding: 2.5rem; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 380px;">
+                        <i class="fa-solid fa-map-location-dot" style="font-size: 4rem; color: var(--royal-gold); margin-bottom: 1.5rem;"></i>
+                        <h3 style="margin-bottom: 0.8rem;">Interactive Campus Map</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem;">150-Acre Royal Estate & Research Park</p>
+                        <a href="https://maps.google.com" target="_blank" class="btn-luxury btn-outline-gold">
+                            <i class="fa-solid fa-location-arrow"></i> Open in Google Maps
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==========================================================================
+       16. FOOTER
+       ========================================================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="nav-brand" style="margin-bottom: 1.2rem;">
+                        <i class="fa-solid fa-crown brand-crest"></i>
+                        <div>
+                            <span class="brand-name">THE KARTIK'S ROYALAS</span>
+                            <span class="brand-sub">International Academy</span>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">
+                        The pinnacle of international educational distinction, cultivating future leaders, scientific pioneers, and global statesmen.
+                    </p>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#" class="faculty-social-link"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="faculty-social-link"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="faculty-social-link"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="faculty-social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 style="color: var(--royal-gold); margin-bottom: 1.5rem; font-size: 1.1rem;">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Heritage</a></li>
+                        <li><a href="#academics">IB Curriculum</a></li>
+                        <li><a href="#facilities">Campus Facilities</a></li>
+                        <li><a href="#faculty">Global Faculty</a></li>
+                        <li><a href="#admissions">Fee Structure</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 style="color: var(--royal-gold); margin-bottom: 1.5rem; font-size: 1.1rem;">Admissions</h4>
+                    <ul class="footer-links">
+                        <li><a href="#admissions">Apply Online</a></li>
+                        <li><a href="#admissions">Scholarships</a></li>
+                        <li><a href="#events">Campus Tours</a></li>
+                        <li><a href="#faq">Admissions FAQ</a></li>
+                        <li><a href="#contact">Contact Dean</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 style="color: var(--royal-gold); margin-bottom: 1.5rem; font-size: 1.1rem;">Royal Newsletter</h4>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">Subscribe for academic publications and event invitations.</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed to Royal Gazette!');">
+                        <input type="email" class="form-control" placeholder="Your email..." required style="padding: 0.6rem 1rem; font-size: 0.85rem;">
+                        <button type="submit" class="btn-luxury btn-gold" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">Join</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>&copy; 2026 The Kartik's Royalas International Academy. All Rights Reserved.</div>
+                <div style="display: flex; gap: 1.5rem;">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Governance</a>
+                    <a href="#">Security Portal</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================================================
+       17. VANILLA JAVASCRIPT LOGIC
+       ========================================================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Loading Screen Hiding
+            const loader = document.getElementById('loader');
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    loader.classList.add('hidden');
+                }, 600);
+            });
+
+            // Fallback timeout in case window load fired early
+            setTimeout(() => {
+                if (!loader.classList.contains('hidden')) {
+                    loader.classList.add('hidden');
+                }
+            }, 1500);
+
+            // 2. Dark / Light Mode Toggle
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const htmlElement = document.documentElement;
+            const themeIcon = themeToggleBtn.querySelector('i');
+
+            const savedTheme = localStorage.getItem('kartiks_theme') || 'dark';
+            htmlElement.setAttribute('data-theme', savedTheme);
+            updateThemeIcon(savedTheme);
+
+            themeToggleBtn.addEventListener('click', () => {
+                const currentTheme = htmlElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                htmlElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('kartiks_theme', newTheme);
+                updateThemeIcon(newTheme);
+            });
+
+            function updateThemeIcon(theme) {
+                if (theme === 'dark') {
+                    themeIcon.className = 'fa-solid fa-sun';
+                } else {
+                    themeIcon.className = 'fa-solid fa-moon';
+                }
+            }
+
+            // 3. Navbar Sticky & Scroll Progress Bar
+            const navbar = document.getElementById('navbar');
+            const scrollProgress = document.getElementById('scroll-progress');
+            const backToTopBtn = document.getElementById('back-to-top');
+
+            window.addEventListener('scroll', () => {
+                const winScroll = document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                scrollProgress.style.width = scrolled + '%';
+
+                if (winScroll > 80) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+
+                if (winScroll > 500) {
+                    backToTopBtn.classList.add('active');
+                } else {
+                    backToTopBtn.classList.remove('active');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // 4. Mobile Menu Toggle
+            const mobileToggle = document.getElementById('mobile-toggle');
+            const navMenu = document.getElementById('nav-menu');
+
+            mobileToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                });
+            });
+
+            // 5. Typing Effect for Hero
+            const typingText = document.getElementById('typing-text');
+            const phrases = [
+                "Cultivating Ivy League Scholars & Global Pioneers",
+                "150-Acre Ultra-Smart Innovation Campus",
+                "World-Class IB Diploma & Advanced STEM Education"
+            ];
+            let phraseIdx = 0;
+            let charIdx = 0;
+            let isDeleting = false;
+
+            function typeLoop() {
+                const currentPhrase = phrases[phraseIdx];
+                if (isDeleting) {
+                    typingText.textContent = currentPhrase.substring(0, charIdx - 1);
+                    charIdx--;
+                } else {
+                    typingText.textContent = currentPhrase.substring(0, charIdx + 1);
+                    charIdx++;
+                }
+
+                let speed = isDeleting ? 40 : 80;
+
+                if (!isDeleting && charIdx === currentPhrase.length) {
+                    speed = 2000;
+                    isDeleting = true;
+                } else if (isDeleting && charIdx === 0) {
+                    isDeleting = false;
+                    phraseIdx = (phraseIdx + 1) % phrases.length;
+                    speed = 500;
+                }
+
+                setTimeout(typeLoop, speed);
+            }
+            typeLoop();
+
+            // 6. Number Counter Animation on Scroll
+            const statNumbers = document.querySelectorAll('.stat-number');
+            let animatedStats = false;
+
+            function checkStatsScroll() {
+                if (animatedStats) return;
+                const heroSection = document.getElementById('hero');
+                const rect = heroSection.getBoundingClientRect();
+                if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+                    animatedStats = true;
+                    statNumbers.forEach(num => {
+                        const target = +num.getAttribute('data-target');
+                        let count = 0;
+                        const increment = target / 60;
+                        const updateCount = () => {
+                            count += increment;
+                            if (count < target) {
+                                num.textContent = Math.ceil(count).toLocaleString() + (target === 100 ? '%' : '+');
+                                requestAnimationFrame(updateCount);
+                            } else {
+                                num.textContent = target.toLocaleString() + (target === 100 ? '%' : '+');
+                            }
+                        };
+                        updateCount();
+                    });
+                }
+            }
+            window.addEventListener('scroll', checkStatsScroll);
+            checkStatsScroll();
+
+            // 7. Gallery Filters & Lightbox Modal
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const lightboxModal = document.getElementById('lightbox-modal');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxClose = document.getElementById('lightbox-close');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    const category = btn.getAttribute('data-filter');
+
+                    galleryItems.forEach(item => {
+                        if (category === 'all' || item.getAttribute('data-category') === category) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            galleryItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const imgSrc = item.querySelector('img').src;
+                    lightboxImg.src = imgSrc;
+                    lightboxModal.classList.add('active');
+                });
+            });
+
+            lightboxClose.addEventListener('click', () => {
+                lightboxModal.classList.remove('active');
+            });
+
+            lightboxModal.addEventListener('click', (e) => {
+                if (e.target === lightboxModal) {
+                    lightboxModal.classList.remove('active');
+                }
+            });
+
+            // 8. Event Countdown Timer
+            function updateCountdown() {
+                const targetDate = new Date(Date.now() + (45 * 24 * 60 * 60 * 1000)); // 45 days from now
+                const now = new Date();
+                const diff = targetDate - now;
+
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                const mins = Math.floor((diff / 1000 / 60) % 60);
+                const secs = Math.floor((diff / 1000) % 60);
+
+                document.getElementById('cd-days').textContent = days;
+                document.getElementById('cd-hours').textContent = hours < 10 ? '0' + hours : hours;
+                document.getElementById('cd-mins').textContent = mins < 10 ? '0' + mins : mins;
+                document.getElementById('cd-secs').textContent = secs < 10 ? '0' + secs : secs;
+            }
+            setInterval(updateCountdown, 1000);
+
+            // 9. Testimonial Slider
+            const track = document.getElementById('testimonial-track');
+            const slides = document.querySelectorAll('.testimonial-slide');
+            const dots = document.querySelectorAll('.dot');
+            const prevBtn = document.getElementById('prev-test');
+            const nextBtn = document.getElementById('next-test');
+            let currentSlide = 0;
+
+            function goToSlide(index) {
+                if (index < 0) index = slides.length - 1;
+                if (index >= slides.length) index = 0;
+                currentSlide = index;
+                track.style.transform = `translateX(-${currentSlide * 100}%)`;
+                dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+            }
+
+            prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
+            nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
+            dots.forEach((dot, i) => dot.addEventListener('click', () => goToSlide(i)));
+
+            setInterval(() => goToSlide(currentSlide + 1), 6000);
+
+            // 10. FAQ Accordion
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const header = item.querySelector('.faq-header');
+                header.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    faqItems.forEach(i => i.classList.remove('active'));
+                    if (!isActive) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+
+            // 11. Admission Form Submission
+            const admissionForm = document.getElementById('admission-form');
+            admissionForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you! Your formal application to The Kartik\'s Royalas International Academy has been submitted successfully. Our Admissions Officer will contact you within 24 hours.');
+                admissionForm.reset();
+            });
+
+            // 12. Active Nav Highlight on Scroll (Scroll Spy)
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 120;
+                    if (pageYOffset >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
